@@ -1,0 +1,4 @@
+gevent==1.2.2
+Eel==0.9.7
+gevent-websocket==0.10.1
+greenlet==0.4.13
