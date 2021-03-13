@@ -7,11 +7,12 @@ def hello_world():
 
 @eel.expose
 def print_string(string):
-    if len(string) > 20:
+    if len(string) > 1:
         print(string)
         return "Success!"
     else:
         return "Too few characters. Please type more than 20 characters."
+
 
 eel.init('public')
 # eel.start('index.html', size=(600, 400), options={

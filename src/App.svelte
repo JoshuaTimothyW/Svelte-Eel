@@ -1,18 +1,24 @@
 <script>
 	export let name;
-	// import { eel } from "../public/eel";
-
 	// eel.set_host("ws://localhost:8000");
 
-	function test() {
-		eel.hello_world();
+	async function call_python() {
+		let msg = await eel.hello_world()();
+		alert(msg);
+	}
+
+	async function send_to_python() {
+		let msg = "call from js";
+		let res = await eel.print_string(msg)();
+		alert(res);
 	}
 
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<button on:click={test}>send hello to python</button>
+	<button on:click={call_python}>send hello to python</button>
+	<button on:click={send_to_python}>send message to python</button>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
